@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmojiComponent.cs" />
+    <Compile Include="EmojiData.cs" />
     <Compile Include="EmojiItem.cs" />
     <Compile Include="EmojiTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
