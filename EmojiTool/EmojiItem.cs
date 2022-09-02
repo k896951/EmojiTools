@@ -9,8 +9,6 @@ namespace EmojiTools
 {
     internal class EmojiItem
     {
-        public string Emoji { get; private set; }
-
         public int ImplementVersion { get; private set; }
 
         public int ImplementRevision { get; private set; }
@@ -21,9 +19,8 @@ namespace EmojiTools
 
         public string Option { get; private set; }
 
-        public EmojiItem(string emoji, int major, int minor, EnumEmojiComponent comp, string name, string option)
+        public EmojiItem(int major, int minor, EnumEmojiComponent comp, string name, string option)
         {
-            Emoji = emoji;
             ImplementVersion = major;
             ImplementRevision = minor;
             Component = comp;
@@ -31,9 +28,8 @@ namespace EmojiTools
             Option = option;
         }
 
-        public EmojiItem(string emoji, int major, int minor, EnumEmojiComponent comp, string name)
+        public EmojiItem(int major, int minor, EnumEmojiComponent comp, string name)
         {
-            Emoji = emoji;
             ImplementVersion = major;
             ImplementRevision = minor;
             Component = comp;
