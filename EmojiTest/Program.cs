@@ -13,6 +13,8 @@ namespace EmojiTest
 
             string[] text3 = { @"1", @"１", @"1️⃣", @"🅰️", @"😶‍🌫", @"😶‍🌫️", @"🦱" };
 
+            string[] text4 = { @"5️⃣✖️2️⃣＝🔟", @"良ければ🆗を選択", @"今の時刻は🕜"};
+
             Console.WriteLine("■絵文字が含まれていますか？");
             
             foreach (var item in text1)
@@ -47,6 +49,14 @@ namespace EmojiTest
                     Console.WriteLine(string.Format(@"{0}  ->  タイプ:{1}, 名称:{2}", item, EmojiTool.GetEmojiType(item), EmojiTool.GetEmojiName(item)));
                 }
             }
+
+            Console.WriteLine("■絵文字の置換");
+
+            foreach (var item in text4)
+            {
+                Console.WriteLine(string.Format(@"{0}  ->  {1}", item, EmojiTool.ChangeEmoji(item) ));
+            }
+
         }
     }
 }
