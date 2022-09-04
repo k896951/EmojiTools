@@ -15,6 +15,8 @@ namespace EmojiTest
 
             string[] text4 = { @"5️⃣✖️2️⃣＝🔟", @"良ければ🆗を選択", @"今の時刻は🕜"};
 
+            string[] text5 = { @"血液型は🆎型です", @"原因の🈶🈚", @"それは🆒だね" };
+
             Console.WriteLine("■絵文字が含まれていますか？");
             
             foreach (var item in text1)
@@ -50,11 +52,21 @@ namespace EmojiTest
                 }
             }
 
-            Console.WriteLine("■絵文字の置換");
+            Console.WriteLine("■絵文字の置換1");
 
             foreach (var item in text4)
             {
                 Console.WriteLine(string.Format(@"{0}  ->  {1}", item, EmojiTool.ChangeEmoji(item) ));
+            }
+
+            Console.WriteLine("■絵文字の置換2");
+
+            foreach (var item in text5)
+            {
+                var ary = EmojiTool.ToStringArray(item);
+
+                Console.WriteLine(string.Format(@"strip  : {0}  ->  {1}", string.Join(", ", ary), string.Join(", ", EmojiTool.StripEmojiArray(ary))));
+                Console.WriteLine(string.Format(@"change : {0}  ->  {1}", string.Join(", ", ary), string.Join(", ", EmojiTool.ChangeEmojiArray(ary))));
             }
 
         }

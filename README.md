@@ -21,6 +21,8 @@ namespace EmojiTest
 
             string[] text4 = { @"5️⃣✖️2️⃣＝🔟", @"良ければ🆗を選択", @"今の時刻は🕜"};
 
+            string[] text5 = { @"血液型は🆎型です", @"原因の🈶🈚", @"それは🆒だね" };
+
             Console.WriteLine("■絵文字が含まれていますか？");
             
             foreach (var item in text1)
@@ -56,11 +58,21 @@ namespace EmojiTest
                 }
             }
 
-            Console.WriteLine("■絵文字の置換");
+            Console.WriteLine("■絵文字の置換1");
 
             foreach (var item in text4)
             {
                 Console.WriteLine(string.Format(@"{0}  ->  {1}", item, EmojiTool.ChangeEmoji(item) ));
+            }
+
+            Console.WriteLine("■絵文字の置換2");
+
+            foreach (var item in text5)
+            {
+                var ary = EmojiTool.ToStringArray(item);
+
+                Console.WriteLine(string.Format(@"strip  : {0}  ->  {1}", string.Join(", ", ary), string.Join(", ", EmojiTool.StripEmojiArray(ary))));
+                Console.WriteLine(string.Format(@"change : {0}  ->  {1}", string.Join(", ", ary), string.Join(", ", EmojiTool.ChangeEmojiArray(ary))));
             }
 
         }
@@ -94,9 +106,16 @@ namespace EmojiTest
 😶‍🌫  ->  タイプ:MinimallyQualified, 名称:(face in clouds, )
 😶‍🌫️  ->  タイプ:FullyQualified, 名称:(face in clouds, )
 🦱  ->  タイプ:Component, 名称:(curly hair, )
-■絵文字の置換
+■絵文字の置換1
 5️⃣✖️2️⃣＝🔟  ->  5×2＝10
 良ければ🆗を選択  ->  良ければOKを選択
 今の時刻は🕜  ->  今の時刻は１時半
+■絵文字の置換2
+strip  : 血, 液, 型, は, 🆎, 型, で, す  ->  血, 液, 型, は, 型, で, す
+change : 血, 液, 型, は, 🆎, 型, で, す  ->  血, 液, 型, は, AB, 型, で, す
+strip  : 原, 因, の, 🈶, 🈚  ->  原, 因, の
+change : 原, 因, の, 🈶, 🈚  ->  原, 因, の, 有, 無
+strip  : そ, れ, は, 🆒, だ, ね  ->  そ, れ, は, だ, ね
+change : そ, れ, は, 🆒, だ, ね  ->  そ, れ, は, COOL, だ, ね
 ```
 

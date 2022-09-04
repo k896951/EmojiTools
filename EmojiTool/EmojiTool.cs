@@ -113,6 +113,32 @@ namespace EmojiTools
         }
 
         /// <summary>
+        /// 絵文字の一部を通常の文字に変更する
+        /// </summary>
+        /// <param name="texts">1文字毎に格納した文字列配列</param>
+        /// <param name="addspace">変更時先頭に空白を付与するか否か</param>
+        /// <returns>絵文字を変更した文字列配列</returns>
+        public static string[] ChangeEmojiArray(string[] texts, bool addspace = false)
+        {
+            var list = new List<string>();
+
+            foreach (var item in texts)
+            {
+                if (EmojiRepData.Emoji2JPStrTable.ContainsKey(item))
+                {
+                    if (addspace) list.Add(" ");
+                    list.Add(EmojiRepData.Emoji2JPStrTable[item]);
+                }
+                else
+                {
+                    list.Add(item);
+                }
+            }
+
+            return list.ToArray();
+        }
+
+        /// <summary>
         /// 絵文字を除去する
         /// </summary>
         /// <param name="text">編集する文字列</param>
@@ -147,6 +173,23 @@ namespace EmojiTools
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// 絵文字を除去する
+        /// </summary>
+        /// <param name="texts">1文字毎に格納した文字列配列</param>
+        /// <returns>絵文字を除去した文字列配列</returns>
+        public static string[] StripEmojiArray(string[] texts)
+        {
+            var list = new List<string>();
+
+            foreach (var item in texts)
+            {
+                if (!EmojiDicData.EmojiTable.ContainsKey(item)) list.Add(item);
+            }
+
+            return list.ToArray();
         }
 
         /// <summary>
