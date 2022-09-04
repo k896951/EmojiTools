@@ -36,7 +36,7 @@ namespace EmojiTools
             var ary = ToArray(text);
             foreach (var item in ary)
             {
-                if (EmojiData.EmojiTable.ContainsKey(item)) return true;
+                if (EmojiDicData.EmojiTable.ContainsKey(item)) return true;
             }
 
             return false;
@@ -51,7 +51,7 @@ namespace EmojiTools
         {
             foreach (var item in texts)
             {
-                if (EmojiData.EmojiTable.ContainsKey(item)) return true;
+                if (EmojiDicData.EmojiTable.ContainsKey(item)) return true;
             }
 
             return false;
@@ -71,10 +71,10 @@ namespace EmojiTools
             sb.Clear();
             foreach (var item in ary)
             {
-                if (EmojiData.Emoji2JPStrTable.ContainsKey(item))
+                if (EmojiRepData.Emoji2JPStrTable.ContainsKey(item))
                 {
                     if (addspace) sb.Append(" ");
-                    sb.Append(EmojiData.Emoji2JPStrTable[item]);
+                    sb.Append(EmojiRepData.Emoji2JPStrTable[item]);
                 }
                 else
                 {
@@ -98,10 +98,10 @@ namespace EmojiTools
             sb.Clear();
             foreach (var item in texts)
             {
-                if (EmojiData.Emoji2JPStrTable.ContainsKey(item))
+                if (EmojiRepData.Emoji2JPStrTable.ContainsKey(item))
                 {
                     if (addspace) sb.Append(" ");
-                    sb.Append(EmojiData.Emoji2JPStrTable[item]);
+                    sb.Append(EmojiRepData.Emoji2JPStrTable[item]);
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace EmojiTools
             sb.Clear();
             foreach (var item in ary)
             {
-                if (!EmojiData.EmojiTable.ContainsKey(item)) sb.Append(item);
+                if (!EmojiDicData.EmojiTable.ContainsKey(item)) sb.Append(item);
             }
 
             return sb.ToString();
@@ -143,7 +143,7 @@ namespace EmojiTools
             sb.Clear();
             foreach (var item in texts)
             {
-                if (!EmojiData.EmojiTable.ContainsKey(item)) sb.Append(item);
+                if (!EmojiDicData.EmojiTable.ContainsKey(item)) sb.Append(item);
             }
 
             return sb.ToString();
@@ -156,7 +156,7 @@ namespace EmojiTools
         /// <returns>trueなら絵文字</returns>
         public static bool IsEmoji(string singleCharStr)
         {
-            return EmojiData.EmojiTable.ContainsKey(singleCharStr);
+            return EmojiDicData.EmojiTable.ContainsKey(singleCharStr);
         }
 
         /// <summary>
@@ -166,9 +166,9 @@ namespace EmojiTools
         /// <returns>絵文字の名称と追加説明。見つからない時は長さゼロの文字列</returns>
         public static (string, string) GetEmojiName(string singleCharStr)
         {
-            if(EmojiData.EmojiTable.ContainsKey(singleCharStr))
+            if(EmojiDicData.EmojiTable.ContainsKey(singleCharStr))
             {
-                return (EmojiData.EmojiTable[singleCharStr].Name, EmojiData.EmojiTable[singleCharStr].Option);
+                return (EmojiDicData.EmojiTable[singleCharStr].Name, EmojiDicData.EmojiTable[singleCharStr].Option);
             }
 
             return ("", "");
@@ -181,9 +181,9 @@ namespace EmojiTools
         /// <returns>タイプ</returns>
         public static EnumEmojiComponent GetEmojiType(string singleCharStr)
         {
-            if (EmojiData.EmojiTable.ContainsKey(singleCharStr))
+            if (EmojiDicData.EmojiTable.ContainsKey(singleCharStr))
             {
-                return EmojiData.EmojiTable[singleCharStr].Component;
+                return EmojiDicData.EmojiTable[singleCharStr].Component;
             }
 
             return EnumEmojiComponent.NoneEmoji;
