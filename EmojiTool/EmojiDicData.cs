@@ -8,6 +8,9 @@ namespace EmojiTools
 {
     internal static class EmojiDicData
     {
+        // See: https://unicode.org/Public/emoji/15.0/emoji-test.txt
+        //      https://unicode.org/Public/emoji/14.0/emoji-test.txt
+
         internal static Dictionary<string, EmojiItem> EmojiTable = new Dictionary<string, EmojiItem>
         {
             { @"😀", new EmojiItem(1,  0,  EnumEmojiComponent.FullyQualified, @"grinning face" ) },
