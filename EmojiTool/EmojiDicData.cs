@@ -4726,16 +4726,12 @@ namespace EmojiTools
             { @"🪿",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"goose") },
             { @"🪼",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"jellyfish") },
             { @"🪻",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"hyacinth") },
-            { @"🍄",  new EmojiItem(0,  6,  EnumEmojiComponent.FullyQualified,  @"mushroom") },
             { @"🫚",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"ginger root") },
             { @"🫛",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"pea pod") },
-            { @"🔫",  new EmojiItem(0,  6,  EnumEmojiComponent.FullyQualified,  @"water pistol") },
             { @"🪭",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"folding hand fan") },
             { @"🪮",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"hair pick") },
             { @"🪇",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"maracas") },
             { @"🪈",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"flute") },
-            { @"🧿",  new EmojiItem(11,  0,  EnumEmojiComponent.FullyQualified,  @"nazar amulet") },
-            { @"🪬",  new EmojiItem(14,  0,  EnumEmojiComponent.FullyQualified,  @"hamsa") },
             { @"🪯",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"khanda") },
             { @"🛜",  new EmojiItem(15,  0,  EnumEmojiComponent.FullyQualified,  @"wireless") }
         };
